@@ -92,7 +92,6 @@ Public Class Form1
             ComboBox2.Items.Add(Trim(words(0)))
         Next hh
         ComboBox2.SelectedIndex = 2
-
     End Sub
     Private Sub grade_combo()
         Dim words() As String
@@ -104,7 +103,6 @@ Public Class Form1
             ComboBox3.Items.Add(Trim(words(0)))
         Next hh
         ComboBox3.SelectedIndex = 1
-
     End Sub
     Private Sub aantalbouten()
         Dim motorverm, toerntal, Torque, dia, Fmotor, frictiecoefficient, F_fric, veiligfacmot, aantwaai As Double
@@ -121,7 +119,6 @@ Public Class Form1
 
         frictiecoefficient = NumericUpDown5.Value
         F_fric = Fmotor / frictiecoefficient      'in [kN] 
-
 
         Try
             Dim words2() As String = boltgrade(ComboBox3.SelectedIndex).Split(";")
@@ -155,7 +152,6 @@ Public Class Form1
         TextBox9.Text = Round(Totoppbout, 2).ToString
         TextBox12.Text = Round(aantbout, 2).ToString
         TextBox28.Text = Round(F_bout, 2).ToString
-
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles NumericUpDown7.ValueChanged, NumericUpDown6.ValueChanged, NumericUpDown5.ValueChanged, NumericUpDown4.ValueChanged, NumericUpDown3.ValueChanged, NumericUpDown2.ValueChanged, NumericUpDown1.ValueChanged, ComboBox2.SelectedIndexChanged, ComboBox1.SelectedIndexChanged, ComboBox3.SelectedIndexChanged
@@ -227,7 +223,6 @@ Public Class Form1
         TextBox14.Text = Round(F_bout, 2).ToString
         TextBox20.Text = Round(elong_force, 4).ToString   'Round(elong_force, 4).ToString
 
-
         If (zet_tot / 1000) < 0.8 * elong_force Then
             TextBox24.BackColor = Color.White
         Else
@@ -286,9 +281,6 @@ Public Class Form1
         TextBox34.Text = Round(MG_aanhaal, 2).ToString
         TextBox33.Text = Round(MG_los, 2).ToString
         TextBox32.Text = Round(M_A, 4).ToString
-
-
-
     End Sub
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click, NumericUpDown16.ValueChanged, NumericUpDown15.ValueChanged, TabPage3.Enter
         aanhaalmoment()
@@ -300,7 +292,6 @@ Public Class Form1
         Dim oTable As Word.Table
         Dim oPara1, oPara2 As Word.Paragraph
         Dim row, font_sizze As Integer
-
 
         'Start Word and open the document template. 
         font_sizze = 9
@@ -463,8 +454,5 @@ Public Class Form1
         oTable.Columns.Item(1).Width = oWord.InchesToPoints(2.4)
         oTable.Columns.Item(2).Width = oWord.InchesToPoints(0.9)
         oTable.Columns.Item(3).Width = oWord.InchesToPoints(0.6)
-
     End Sub
-
-
 End Class
