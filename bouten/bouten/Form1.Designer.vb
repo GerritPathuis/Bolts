@@ -24,28 +24,6 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.TextBox28 = New System.Windows.Forms.TextBox()
-        Me.Label46 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox12 = New System.Windows.Forms.TextBox()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.ComboBox3 = New System.Windows.Forms.ComboBox()
         Me.Label48 = New System.Windows.Forms.Label()
@@ -69,14 +47,36 @@ Partial Class Form1
         Me.NumericUpDown2 = New System.Windows.Forms.NumericUpDown()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label11 = New System.Windows.Forms.Label()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.TextBox28 = New System.Windows.Forms.TextBox()
+        Me.Label46 = New System.Windows.Forms.Label()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.TextBox12 = New System.Windows.Forms.TextBox()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.TextBox9 = New System.Windows.Forms.TextBox()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.TextBox53 = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Label73 = New System.Windows.Forms.Label()
         Me.Label72 = New System.Windows.Forms.Label()
         Me.Label71 = New System.Windows.Forms.Label()
         Me.TextBox35 = New System.Windows.Forms.TextBox()
         Me.TextBox23 = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.TextBox20 = New System.Windows.Forms.TextBox()
@@ -149,10 +149,28 @@ Partial Class Form1
         Me.NumericUpDown15 = New System.Windows.Forms.NumericUpDown()
         Me.Label30 = New System.Windows.Forms.Label()
         Me.NumericUpDown16 = New System.Windows.Forms.NumericUpDown()
+        Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.ComboBox4 = New System.Windows.Forms.ComboBox()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.TextBox29 = New System.Windows.Forms.TextBox()
+        Me.Label49 = New System.Windows.Forms.Label()
+        Me.TextBox36 = New System.Windows.Forms.TextBox()
+        Me.Label55 = New System.Windows.Forms.Label()
+        Me.TextBox37 = New System.Windows.Forms.TextBox()
+        Me.Label56 = New System.Windows.Forms.Label()
+        Me.TextBox38 = New System.Windows.Forms.TextBox()
+        Me.Label57 = New System.Windows.Forms.Label()
+        Me.NumericUpDown20 = New System.Windows.Forms.NumericUpDown()
+        Me.GroupBox10 = New System.Windows.Forms.GroupBox()
+        Me.Label60 = New System.Windows.Forms.Label()
+        Me.Label59 = New System.Windows.Forms.Label()
+        Me.TextBox40 = New System.Windows.Forms.TextBox()
+        Me.Label61 = New System.Windows.Forms.Label()
+        Me.TextBox30 = New System.Windows.Forms.TextBox()
+        Me.Label54 = New System.Windows.Forms.Label()
+        Me.Label58 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.NumericUpDown17, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown7, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -162,6 +180,8 @@ Partial Class Form1
         CType(Me.NumericUpDown5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox3.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
@@ -180,6 +200,9 @@ Partial Class Form1
         Me.GroupBox8.SuspendLayout()
         CType(Me.NumericUpDown15, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown16, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage4.SuspendLayout()
+        CType(Me.NumericUpDown20, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox10.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -187,6 +210,7 @@ Partial Class Form1
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage3)
+        Me.TabControl1.Controls.Add(Me.TabPage4)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControl1.Location = New System.Drawing.Point(0, 0)
         Me.TabControl1.Name = "TabControl1"
@@ -204,224 +228,10 @@ Partial Class Form1
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1226, 557)
+        Me.TabPage1.Size = New System.Drawing.Size(617, 557)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Number of Bolts"
         Me.TabPage1.UseVisualStyleBackColor = True
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.TextBox53)
-        Me.GroupBox1.Controls.Add(Me.Label73)
-        Me.GroupBox1.Controls.Add(Me.Label72)
-        Me.GroupBox1.Controls.Add(Me.Label71)
-        Me.GroupBox1.Controls.Add(Me.TextBox35)
-        Me.GroupBox1.Controls.Add(Me.TextBox23)
-        Me.GroupBox1.Location = New System.Drawing.Point(6, 6)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(290, 133)
-        Me.GroupBox1.TabIndex = 12
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Project description"
-        '
-        'GroupBox3
-        '
-        Me.GroupBox3.Controls.Add(Me.TextBox28)
-        Me.GroupBox3.Controls.Add(Me.Label46)
-        Me.GroupBox3.Controls.Add(Me.TextBox3)
-        Me.GroupBox3.Controls.Add(Me.Label16)
-        Me.GroupBox3.Controls.Add(Me.TextBox1)
-        Me.GroupBox3.Controls.Add(Me.Label3)
-        Me.GroupBox3.Controls.Add(Me.TextBox12)
-        Me.GroupBox3.Controls.Add(Me.Label18)
-        Me.GroupBox3.Controls.Add(Me.TextBox9)
-        Me.GroupBox3.Controls.Add(Me.Label15)
-        Me.GroupBox3.Controls.Add(Me.TextBox8)
-        Me.GroupBox3.Controls.Add(Me.Label14)
-        Me.GroupBox3.Controls.Add(Me.TextBox7)
-        Me.GroupBox3.Controls.Add(Me.Label13)
-        Me.GroupBox3.Controls.Add(Me.TextBox6)
-        Me.GroupBox3.Controls.Add(Me.Label12)
-        Me.GroupBox3.Controls.Add(Me.TextBox5)
-        Me.GroupBox3.Controls.Add(Me.Label10)
-        Me.GroupBox3.Controls.Add(Me.TextBox2)
-        Me.GroupBox3.Controls.Add(Me.Label6)
-        Me.GroupBox3.Location = New System.Drawing.Point(302, 6)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(277, 396)
-        Me.GroupBox3.TabIndex = 75
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Output"
-        '
-        'TextBox28
-        '
-        Me.TextBox28.Location = New System.Drawing.Point(166, 356)
-        Me.TextBox28.Name = "TextBox28"
-        Me.TextBox28.Size = New System.Drawing.Size(67, 20)
-        Me.TextBox28.TabIndex = 91
-        Me.TextBox28.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label46
-        '
-        Me.Label46.AutoSize = True
-        Me.Label46.Location = New System.Drawing.Point(6, 359)
-        Me.Label46.Name = "Label46"
-        Me.Label46.Size = New System.Drawing.Size(109, 13)
-        Me.Label46.TabIndex = 90
-        Me.Label46.Text = "Kracht per bout [kN]  "
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Location = New System.Drawing.Point(166, 171)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(67, 20)
-        Me.TextBox3.TabIndex = 89
-        Me.TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(6, 170)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(154, 13)
-        Me.Label16.TabIndex = 88
-        Me.Label16.Text = "Toegestane spanning [N/mm2]"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(166, 23)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(67, 20)
-        Me.TextBox1.TabIndex = 86
-        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(6, 32)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(66, 13)
-        Me.Label3.TabIndex = 87
-        Me.Label3.Text = "Torque [Nm]"
-        '
-        'TextBox12
-        '
-        Me.TextBox12.Location = New System.Drawing.Point(166, 319)
-        Me.TextBox12.Name = "TextBox12"
-        Me.TextBox12.Size = New System.Drawing.Size(67, 20)
-        Me.TextBox12.TabIndex = 85
-        Me.TextBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(6, 328)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(79, 13)
-        Me.Label18.TabIndex = 84
-        Me.Label18.Text = "Aantal bouten  "
-        '
-        'TextBox9
-        '
-        Me.TextBox9.Location = New System.Drawing.Point(166, 282)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(67, 20)
-        Me.TextBox9.TabIndex = 83
-        Me.TextBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(6, 288)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(99, 13)
-        Me.Label15.TabIndex = 82
-        Me.Label15.Text = "Tot opp bout [mm2]"
-        '
-        'TextBox8
-        '
-        Me.TextBox8.Location = New System.Drawing.Point(166, 245)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(67, 20)
-        Me.TextBox8.TabIndex = 81
-        Me.TextBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(6, 248)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(85, 13)
-        Me.Label14.TabIndex = 80
-        Me.Label14.Text = "Opp bout  [mm2]"
-        '
-        'TextBox7
-        '
-        Me.TextBox7.Location = New System.Drawing.Point(166, 208)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(67, 20)
-        Me.TextBox7.TabIndex = 79
-        Me.TextBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(6, 212)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(97, 13)
-        Me.Label13.TabIndex = 78
-        Me.Label13.Text = "Kerndiameter  [mm]"
-        '
-        'TextBox6
-        '
-        Me.TextBox6.Location = New System.Drawing.Point(166, 134)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(67, 20)
-        Me.TextBox6.TabIndex = 77
-        Me.TextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(6, 140)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(97, 13)
-        Me.Label12.TabIndex = 76
-        Me.Label12.Text = "Rekgrens [N/mm2]"
-        '
-        'TextBox5
-        '
-        Me.TextBox5.Location = New System.Drawing.Point(166, 97)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(67, 20)
-        Me.TextBox5.TabIndex = 75
-        Me.TextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(6, 105)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(73, 13)
-        Me.Label10.TabIndex = 74
-        Me.Label10.Text = "F_friction [kN]"
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(166, 60)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(67, 20)
-        Me.TextBox2.TabIndex = 73
-        Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(6, 63)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(68, 13)
-        Me.Label6.TabIndex = 72
-        Me.Label6.Text = "F_motor [kN]"
         '
         'GroupBox2
         '
@@ -672,6 +482,205 @@ Partial Class Form1
         Me.Label11.TabIndex = 74
         Me.Label11.Text = "Type bout "
         '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.TextBox28)
+        Me.GroupBox3.Controls.Add(Me.Label46)
+        Me.GroupBox3.Controls.Add(Me.TextBox3)
+        Me.GroupBox3.Controls.Add(Me.Label16)
+        Me.GroupBox3.Controls.Add(Me.TextBox1)
+        Me.GroupBox3.Controls.Add(Me.Label3)
+        Me.GroupBox3.Controls.Add(Me.TextBox12)
+        Me.GroupBox3.Controls.Add(Me.Label18)
+        Me.GroupBox3.Controls.Add(Me.TextBox9)
+        Me.GroupBox3.Controls.Add(Me.Label15)
+        Me.GroupBox3.Controls.Add(Me.TextBox8)
+        Me.GroupBox3.Controls.Add(Me.Label14)
+        Me.GroupBox3.Controls.Add(Me.TextBox7)
+        Me.GroupBox3.Controls.Add(Me.Label13)
+        Me.GroupBox3.Controls.Add(Me.TextBox6)
+        Me.GroupBox3.Controls.Add(Me.Label12)
+        Me.GroupBox3.Controls.Add(Me.TextBox5)
+        Me.GroupBox3.Controls.Add(Me.Label10)
+        Me.GroupBox3.Controls.Add(Me.TextBox2)
+        Me.GroupBox3.Controls.Add(Me.Label6)
+        Me.GroupBox3.Location = New System.Drawing.Point(302, 6)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(277, 396)
+        Me.GroupBox3.TabIndex = 75
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Output"
+        '
+        'TextBox28
+        '
+        Me.TextBox28.Location = New System.Drawing.Point(166, 356)
+        Me.TextBox28.Name = "TextBox28"
+        Me.TextBox28.Size = New System.Drawing.Size(67, 20)
+        Me.TextBox28.TabIndex = 91
+        Me.TextBox28.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label46
+        '
+        Me.Label46.AutoSize = True
+        Me.Label46.Location = New System.Drawing.Point(6, 359)
+        Me.Label46.Name = "Label46"
+        Me.Label46.Size = New System.Drawing.Size(109, 13)
+        Me.Label46.TabIndex = 90
+        Me.Label46.Text = "Kracht per bout [kN]  "
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Location = New System.Drawing.Point(166, 171)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(67, 20)
+        Me.TextBox3.TabIndex = 89
+        Me.TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(6, 170)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(154, 13)
+        Me.Label16.TabIndex = 88
+        Me.Label16.Text = "Toegestane spanning [N/mm2]"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(166, 23)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(67, 20)
+        Me.TextBox1.TabIndex = 86
+        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(6, 32)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(66, 13)
+        Me.Label3.TabIndex = 87
+        Me.Label3.Text = "Torque [Nm]"
+        '
+        'TextBox12
+        '
+        Me.TextBox12.Location = New System.Drawing.Point(166, 319)
+        Me.TextBox12.Name = "TextBox12"
+        Me.TextBox12.Size = New System.Drawing.Size(67, 20)
+        Me.TextBox12.TabIndex = 85
+        Me.TextBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(6, 328)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(79, 13)
+        Me.Label18.TabIndex = 84
+        Me.Label18.Text = "Aantal bouten  "
+        '
+        'TextBox9
+        '
+        Me.TextBox9.Location = New System.Drawing.Point(166, 282)
+        Me.TextBox9.Name = "TextBox9"
+        Me.TextBox9.Size = New System.Drawing.Size(67, 20)
+        Me.TextBox9.TabIndex = 83
+        Me.TextBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(6, 288)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(99, 13)
+        Me.Label15.TabIndex = 82
+        Me.Label15.Text = "Tot opp bout [mm2]"
+        '
+        'TextBox8
+        '
+        Me.TextBox8.Location = New System.Drawing.Point(166, 245)
+        Me.TextBox8.Name = "TextBox8"
+        Me.TextBox8.Size = New System.Drawing.Size(67, 20)
+        Me.TextBox8.TabIndex = 81
+        Me.TextBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(6, 248)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(85, 13)
+        Me.Label14.TabIndex = 80
+        Me.Label14.Text = "Opp bout  [mm2]"
+        '
+        'TextBox7
+        '
+        Me.TextBox7.Location = New System.Drawing.Point(166, 208)
+        Me.TextBox7.Name = "TextBox7"
+        Me.TextBox7.Size = New System.Drawing.Size(67, 20)
+        Me.TextBox7.TabIndex = 79
+        Me.TextBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(6, 212)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(97, 13)
+        Me.Label13.TabIndex = 78
+        Me.Label13.Text = "Kerndiameter  [mm]"
+        '
+        'TextBox6
+        '
+        Me.TextBox6.Location = New System.Drawing.Point(166, 134)
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.Size = New System.Drawing.Size(67, 20)
+        Me.TextBox6.TabIndex = 77
+        Me.TextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(6, 140)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(97, 13)
+        Me.Label12.TabIndex = 76
+        Me.Label12.Text = "Rekgrens [N/mm2]"
+        '
+        'TextBox5
+        '
+        Me.TextBox5.Location = New System.Drawing.Point(166, 97)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.Size = New System.Drawing.Size(67, 20)
+        Me.TextBox5.TabIndex = 75
+        Me.TextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(6, 105)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(73, 13)
+        Me.Label10.TabIndex = 74
+        Me.Label10.Text = "F_friction [kN]"
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(166, 60)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(67, 20)
+        Me.TextBox2.TabIndex = 73
+        Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(6, 63)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(68, 13)
+        Me.Label6.TabIndex = 72
+        Me.Label6.Text = "F_motor [kN]"
+        '
         'Button2
         '
         Me.Button2.Location = New System.Drawing.Point(440, 505)
@@ -681,6 +690,21 @@ Partial Class Form1
         Me.Button2.Text = "Print to word"
         Me.Button2.UseVisualStyleBackColor = True
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.TextBox53)
+        Me.GroupBox1.Controls.Add(Me.Label73)
+        Me.GroupBox1.Controls.Add(Me.Label72)
+        Me.GroupBox1.Controls.Add(Me.Label71)
+        Me.GroupBox1.Controls.Add(Me.TextBox35)
+        Me.GroupBox1.Controls.Add(Me.TextBox23)
+        Me.GroupBox1.Location = New System.Drawing.Point(6, 6)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(290, 133)
+        Me.GroupBox1.TabIndex = 12
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Project description"
+        '
         'TextBox53
         '
         Me.TextBox53.Location = New System.Drawing.Point(125, 83)
@@ -688,15 +712,6 @@ Partial Class Form1
         Me.TextBox53.Size = New System.Drawing.Size(97, 20)
         Me.TextBox53.TabIndex = 50
         Me.TextBox53.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(493, 434)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'Label73
         '
@@ -745,6 +760,15 @@ Partial Class Form1
         Me.TextBox23.TabIndex = 45
         Me.TextBox23.Text = "Technimont"
         Me.TextBox23.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(493, 434)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 0
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'TabPage2
         '
@@ -1208,7 +1232,7 @@ Partial Class Form1
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(687, 557)
+        Me.TabPage3.Size = New System.Drawing.Size(617, 557)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Aanhaalmoment"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -1476,6 +1500,206 @@ Partial Class Form1
         Me.NumericUpDown16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.NumericUpDown16.Value = New Decimal(New Integer() {15, 0, 0, 131072})
         '
+        'TabPage4
+        '
+        Me.TabPage4.Controls.Add(Me.GroupBox10)
+        Me.TabPage4.Controls.Add(Me.Button5)
+        Me.TabPage4.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage4.Size = New System.Drawing.Size(617, 557)
+        Me.TabPage4.TabIndex = 3
+        Me.TabPage4.Text = "Lock Nuts"
+        Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'ComboBox4
+        '
+        Me.ComboBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox4.FormattingEnabled = True
+        Me.ComboBox4.Location = New System.Drawing.Point(17, 31)
+        Me.ComboBox4.Name = "ComboBox4"
+        Me.ComboBox4.Size = New System.Drawing.Size(254, 24)
+        Me.ComboBox4.TabIndex = 0
+        '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(206, 416)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(75, 23)
+        Me.Button5.TabIndex = 1
+        Me.Button5.Text = "Button5"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'TextBox29
+        '
+        Me.TextBox29.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox29.Location = New System.Drawing.Point(204, 243)
+        Me.TextBox29.Name = "TextBox29"
+        Me.TextBox29.Size = New System.Drawing.Size(67, 21)
+        Me.TextBox29.TabIndex = 117
+        Me.TextBox29.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label49
+        '
+        Me.Label49.AutoSize = True
+        Me.Label49.Location = New System.Drawing.Point(14, 244)
+        Me.Label49.Name = "Label49"
+        Me.Label49.Size = New System.Drawing.Size(143, 13)
+        Me.Label49.TabIndex = 116
+        Me.Label49.Text = "Totaal aanhaal moment [Nm]"
+        '
+        'TextBox36
+        '
+        Me.TextBox36.Location = New System.Drawing.Point(204, 158)
+        Me.TextBox36.Name = "TextBox36"
+        Me.TextBox36.Size = New System.Drawing.Size(67, 20)
+        Me.TextBox36.TabIndex = 112
+        Me.TextBox36.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label55
+        '
+        Me.Label55.AutoSize = True
+        Me.Label55.Location = New System.Drawing.Point(14, 161)
+        Me.Label55.Name = "Label55"
+        Me.Label55.Size = New System.Drawing.Size(122, 13)
+        Me.Label55.TabIndex = 113
+        Me.Label55.Text = "Trek kracht in shaft [kN]"
+        '
+        'TextBox37
+        '
+        Me.TextBox37.Location = New System.Drawing.Point(204, 217)
+        Me.TextBox37.Name = "TextBox37"
+        Me.TextBox37.Size = New System.Drawing.Size(67, 20)
+        Me.TextBox37.TabIndex = 111
+        Me.TextBox37.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label56
+        '
+        Me.Label56.AutoSize = True
+        Me.Label56.Location = New System.Drawing.Point(14, 218)
+        Me.Label56.Name = "Label56"
+        Me.Label56.Size = New System.Drawing.Size(141, 13)
+        Me.Label56.TabIndex = 110
+        Me.Label56.Text = "Frictie moment in draad [Nm]"
+        '
+        'TextBox38
+        '
+        Me.TextBox38.Location = New System.Drawing.Point(204, 191)
+        Me.TextBox38.Name = "TextBox38"
+        Me.TextBox38.Size = New System.Drawing.Size(67, 20)
+        Me.TextBox38.TabIndex = 109
+        Me.TextBox38.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label57
+        '
+        Me.Label57.AutoSize = True
+        Me.Label57.Location = New System.Drawing.Point(14, 194)
+        Me.Label57.Name = "Label57"
+        Me.Label57.Size = New System.Drawing.Size(152, 13)
+        Me.Label57.TabIndex = 108
+        Me.Label57.Text = "Frictie moment opleg vlak [Nm]"
+        '
+        'NumericUpDown20
+        '
+        Me.NumericUpDown20.BackColor = System.Drawing.Color.Yellow
+        Me.NumericUpDown20.DecimalPlaces = 2
+        Me.NumericUpDown20.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
+        Me.NumericUpDown20.Location = New System.Drawing.Point(204, 80)
+        Me.NumericUpDown20.Maximum = New Decimal(New Integer() {2, 0, 0, 0})
+        Me.NumericUpDown20.Minimum = New Decimal(New Integer() {1, 0, 0, 65536})
+        Me.NumericUpDown20.Name = "NumericUpDown20"
+        Me.NumericUpDown20.Size = New System.Drawing.Size(67, 20)
+        Me.NumericUpDown20.TabIndex = 105
+        Me.NumericUpDown20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.NumericUpDown20.Value = New Decimal(New Integer() {14, 0, 0, 131072})
+        '
+        'GroupBox10
+        '
+        Me.GroupBox10.Controls.Add(Me.Label58)
+        Me.GroupBox10.Controls.Add(Me.TextBox30)
+        Me.GroupBox10.Controls.Add(Me.Label54)
+        Me.GroupBox10.Controls.Add(Me.TextBox40)
+        Me.GroupBox10.Controls.Add(Me.Label61)
+        Me.GroupBox10.Controls.Add(Me.Label59)
+        Me.GroupBox10.Controls.Add(Me.ComboBox4)
+        Me.GroupBox10.Controls.Add(Me.TextBox29)
+        Me.GroupBox10.Controls.Add(Me.NumericUpDown20)
+        Me.GroupBox10.Controls.Add(Me.Label49)
+        Me.GroupBox10.Controls.Add(Me.Label60)
+        Me.GroupBox10.Controls.Add(Me.TextBox36)
+        Me.GroupBox10.Controls.Add(Me.Label57)
+        Me.GroupBox10.Controls.Add(Me.Label55)
+        Me.GroupBox10.Controls.Add(Me.TextBox38)
+        Me.GroupBox10.Controls.Add(Me.TextBox37)
+        Me.GroupBox10.Controls.Add(Me.Label56)
+        Me.GroupBox10.Location = New System.Drawing.Point(10, 30)
+        Me.GroupBox10.Name = "GroupBox10"
+        Me.GroupBox10.Size = New System.Drawing.Size(365, 353)
+        Me.GroupBox10.TabIndex = 118
+        Me.GroupBox10.TabStop = False
+        Me.GroupBox10.Text = "Lock nut"
+        '
+        'Label60
+        '
+        Me.Label60.AutoSize = True
+        Me.Label60.Location = New System.Drawing.Point(14, 82)
+        Me.Label60.Name = "Label60"
+        Me.Label60.Size = New System.Drawing.Size(113, 13)
+        Me.Label60.TabIndex = 104
+        Me.Label60.Text = "Frictiefactor op bout [-]"
+        '
+        'Label59
+        '
+        Me.Label59.AutoSize = True
+        Me.Label59.Location = New System.Drawing.Point(15, 294)
+        Me.Label59.Name = "Label59"
+        Me.Label59.Size = New System.Drawing.Size(128, 13)
+        Me.Label59.TabIndex = 118
+        Me.Label59.Text = "Quality 8.8 -> 640 N/mm2"
+        '
+        'TextBox40
+        '
+        Me.TextBox40.Location = New System.Drawing.Point(204, 132)
+        Me.TextBox40.Name = "TextBox40"
+        Me.TextBox40.Size = New System.Drawing.Size(67, 20)
+        Me.TextBox40.TabIndex = 119
+        Me.TextBox40.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label61
+        '
+        Me.Label61.AutoSize = True
+        Me.Label61.Location = New System.Drawing.Point(14, 135)
+        Me.Label61.Name = "Label61"
+        Me.Label61.Size = New System.Drawing.Size(87, 13)
+        Me.Label61.TabIndex = 120
+        Me.Label61.Text = "Shaft area [mm2]"
+        '
+        'TextBox30
+        '
+        Me.TextBox30.Location = New System.Drawing.Point(204, 106)
+        Me.TextBox30.Name = "TextBox30"
+        Me.TextBox30.Size = New System.Drawing.Size(67, 20)
+        Me.TextBox30.TabIndex = 121
+        Me.TextBox30.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label54
+        '
+        Me.Label54.AutoSize = True
+        Me.Label54.Location = New System.Drawing.Point(14, 109)
+        Me.Label54.Name = "Label54"
+        Me.Label54.Size = New System.Drawing.Size(103, 13)
+        Me.Label54.TabIndex = 122
+        Me.Label54.Text = "Shaft diameter  [mm]"
+        '
+        'Label58
+        '
+        Me.Label58.AutoSize = True
+        Me.Label58.Location = New System.Drawing.Point(15, 317)
+        Me.Label58.Name = "Label58"
+        Me.Label58.Size = New System.Drawing.Size(211, 13)
+        Me.Label58.TabIndex = 123
+        Me.Label58.Text = "Trekkracht Borgmoer is 10% trekkracht bolt"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1486,10 +1710,6 @@ Partial Class Form1
         Me.Text = "Bolt and Nuts version 001"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox3.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         CType(Me.NumericUpDown17, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1500,6 +1720,10 @@ Partial Class Form1
         CType(Me.NumericUpDown5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox6.PerformLayout()
@@ -1524,6 +1748,10 @@ Partial Class Form1
         Me.GroupBox8.PerformLayout()
         CType(Me.NumericUpDown15, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown16, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage4.ResumeLayout(False)
+        CType(Me.NumericUpDown20, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox10.ResumeLayout(False)
+        Me.GroupBox10.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1655,4 +1883,24 @@ Partial Class Form1
     Friend WithEvents Label53 As Label
     Friend WithEvents ComboBox3 As ComboBox
     Friend WithEvents Label48 As Label
+    Friend WithEvents TabPage4 As TabPage
+    Friend WithEvents ComboBox4 As ComboBox
+    Friend WithEvents Button5 As Button
+    Friend WithEvents GroupBox10 As GroupBox
+    Friend WithEvents TextBox29 As TextBox
+    Friend WithEvents NumericUpDown20 As NumericUpDown
+    Friend WithEvents Label49 As Label
+    Friend WithEvents TextBox36 As TextBox
+    Friend WithEvents Label57 As Label
+    Friend WithEvents Label55 As Label
+    Friend WithEvents TextBox38 As TextBox
+    Friend WithEvents TextBox37 As TextBox
+    Friend WithEvents Label56 As Label
+    Friend WithEvents TextBox40 As TextBox
+    Friend WithEvents Label61 As Label
+    Friend WithEvents Label59 As Label
+    Friend WithEvents Label60 As Label
+    Friend WithEvents TextBox30 As TextBox
+    Friend WithEvents Label54 As Label
+    Friend WithEvents Label58 As Label
 End Class

@@ -12,29 +12,47 @@ Imports System.Collections.Generic
 ' ter verificatie van getallen zie: http://www.werktuigbouw.nl/calculators/e3_6a.htm
 Public Class Form1
     Public Shared bolttype() As String =
-     {"Description; Kerndia;  flankdia; width head; spoed; buitendiameter",                                      'width head: http://stsindustrial.com/a4-hex-cap-screw-technical-data/
-    "M 1.60	;1.171	;1.373	;2.86;	0.35;	1.6	",
-    "M 2.00	;1.509	;1.740	;3.62	;0.40;	2	",
-    "M 2.50	;1.948	;2.208	;4.32	;0.45;	2.5	",
-    "M 3.00	;2.387	;2.675	;5.32	;0.50;	3	",
-    "M 4.00	;3.141	;3.545	;6.78	;0.70;	4	",
-    "M 5.00	;4.019	;4.480	;8.28	;0.80;	5	",
-    "M 6.00	;4.773	;5.350	;9.78	;1.00;	6	",
-    "M 8.00	;6.466	;7.188	;12.73	;1.25;	8	",
-    "M 10.00;8.160	;9.026	;15.73	;1.50;	10	",
-    "M 12.00;9.853	;10.863	;17.73	;1.75;	12	",
-    "M 14.00;11.546	;12.701	;20.67	;2.00;	14	",
-    "M 16.00;13.546	;14.701	;23.67	;2.00;	16	",
-    "M 18.00;14.933	;16.376	;26.67	;2.50;	18	",
-    "M 20.00;16.933	;18.376	;29.67	;2.50;	20	",
-    "M 22.00;18.933	;20.376	;32.61	;2.50;	22	",
-    "M 24.00;20.319	;22.051	;35.61	;3.00;	24	",
-    "M 27.00;23.319	;25.051	;39.61	;3.00;	27	",
-    "M 30.00;25.706	;27.727	;44.61	;3.50;	30	",
-    "M 33.00;28.706	;30.727	;49.61	;3.50;	33	",
-    "M 36.00;31.093	;33.402	;53.54	;4.00;	36	",
-    "M 42.00;36.479	;39.077	;62.54	;4.50;	42	"}
+     {"Description; Kerndia;  dia_schroefdraad; width head; spoed; buitendiameter",                                      'width head: http://stsindustrial.com/a4-hex-cap-screw-technical-data/
+    "M 6; 4.773	;   5.350	;9.78	;1.00;	6	",
+    "M 8; 6.466	;   7.188	;12.73	;1.25;	8	",
+    "M 10;8.160	;   9.026	;15.73	;1.50;	10	",
+    "M 12;9.853	;   10.863	;17.73	;1.75;	12	",
+    "M 14;11.546	;12.701	;20.67	;2.00;	14	",
+    "M 16;13.546	;14.701	;23.67	;2.00;	16	",
+    "M 18;14.933	;16.376	;26.67	;2.50;	18	",
+    "M 20;16.933	;18.376	;29.67	;2.50;	20	",
+    "M 22;18.933	;20.376	;32.61	;2.50;	22	",
+    "M 24;20.319	;22.051	;35.61	;3.00;	24	",
+    "M 27;23.319	;25.051	;39.61	;3.00;	27	",
+    "M 30;25.706	;27.727	;44.61	;3.50;	30	",
+    "M 33;28.706	;30.727	;49.61	;3.50;	33	",
+    "M 36;31.093	;33.402	;53.54	;4.00;	36	",
+    "M 42;36.479	;39.077	;62.54	;4.50;	42	"}
 
+    'SKF book page 1278
+    '"Description; Kerndia;  spoed",
+    Public Shared Lock_nut() As String =
+     {
+    "KM19, M95x2;  95; 2",
+    "KM20, M100x2; 100; 2",
+    "KM22, M110x2; 110; 2",
+    "kM24, M120x2; 120; 2",
+    "kM26, M130x2; 130; 2",
+    "kM28, M140x2; 140; 2",
+    "kM30, M150x2; 150; 2",
+    "kM32, M160x3; 160; 3",
+    "kM34, M170x3; 170; 3",
+    "kM36, M180x3; 180; 3",
+    "kM38, M190x3; 190; 3",
+    "kM40, M120x3; 200; 3",
+    "kM42, M210x3; 210; 3",
+    "kM44T, Tr220x4; 220;4",
+    "kM48T, Tr240x4; 240;4",
+    "kM52T, Tr260x4; 260;4",
+    "kM56T, Tr280x4; 280;4",
+    "HM3160,Tr300x4; 300;4",
+    "HM3164,Tr320x5; 320;5"
+    }
 
     Public Shared boltgrade() As String =
      {"Description; treksterkte;rekgrens",
@@ -56,7 +74,7 @@ Public Class Form1
      {"Aantal",
     "1",
     "2",
-     "4",
+    "4",
     "8",
     "12",
     "16",
@@ -66,11 +84,12 @@ Public Class Form1
         Thread.CurrentThread.CurrentCulture = New CultureInfo("en-US")      'Decimal separator "."
         Thread.CurrentThread.CurrentUICulture = New CultureInfo("en-US")    'Decimal separator "."
 
-        bouten_combo()
-        geinstbout_combo()
-        grade_combo()
+        Bouten_combo()
+        Geinstbout_combo()
+        Grade_combo()
+        Lock_nut_combo()
     End Sub
-    Private Sub bouten_combo()
+    Private Sub Bouten_combo()
         Dim words() As String
 
         ComboBox1.Items.Clear()
@@ -82,7 +101,18 @@ Public Class Form1
         ComboBox1.SelectedIndex = 2
 
     End Sub
-    Private Sub geinstbout_combo()
+    Private Sub Lock_nut_combo()
+        Dim words() As String
+
+        ComboBox4.Items.Clear()
+        '-------Fill combobox4,  selection------------------
+        For hh = 0 To Lock_nut.Length - 1            'Fill combobox 
+            words = Lock_nut(hh).Split(";")
+            ComboBox4.Items.Add(Trim(words(0)))
+        Next hh
+        ComboBox4.SelectedIndex = 1
+    End Sub
+    Private Sub Geinstbout_combo()
         Dim words() As String
 
         ComboBox2.Items.Clear()
@@ -93,7 +123,7 @@ Public Class Form1
         Next hh
         ComboBox2.SelectedIndex = 2
     End Sub
-    Private Sub grade_combo()
+    Private Sub Grade_combo()
         Dim words() As String
 
         ComboBox3.Items.Clear()
@@ -104,9 +134,9 @@ Public Class Form1
         Next hh
         ComboBox3.SelectedIndex = 1
     End Sub
-    Private Sub aantalbouten()
+    Private Sub Aantalbouten()
         Dim motorverm, toerntal, Torque, dia, Fmotor, frictiecoefficient, F_fric, veiligfacmot, aantwaai As Double
-        Dim safetyfact, rekgrens, kerndia, toegsp, flankdia, d0 As Double
+        Dim safetyfact, rekgrens, kerndia, toegsp, dia_schroefdraad, d0 As Double
         Dim oppbout, Totoppbout, aantbout, F_bout As Double
         motorverm = NumericUpDown1.Value
         toerntal = NumericUpDown2.Value
@@ -125,12 +155,12 @@ Public Class Form1
             rekgrens = words2(2)
             Dim words1() As String = bolttype(ComboBox1.SelectedIndex).Split(";")
             kerndia = words1(1)
-            flankdia = words1(2)
+            dia_schroefdraad = words1(2)
         Catch ex As Exception
             'MessageBox.Show(ex.Message & "Line 1290")  ' Show the exception's message.
         End Try
 
-        d0 = (kerndia + flankdia) / 2
+        d0 = (kerndia + dia_schroefdraad) / 2
         safetyfact = NumericUpDown17.Value
         NumericUpDown17.Enabled = False
         toegsp = safetyfact * rekgrens
@@ -155,7 +185,7 @@ Public Class Form1
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles NumericUpDown7.ValueChanged, NumericUpDown6.ValueChanged, NumericUpDown5.ValueChanged, NumericUpDown4.ValueChanged, NumericUpDown3.ValueChanged, NumericUpDown2.ValueChanged, NumericUpDown1.ValueChanged, ComboBox2.SelectedIndexChanged, ComboBox1.SelectedIndexChanged, ComboBox3.SelectedIndexChanged
-        aantalbouten()
+        Aantalbouten()
     End Sub
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs)
         Dim qq, sigma02 As Double
@@ -182,7 +212,7 @@ Public Class Form1
 
         End If
     End Sub
-    Private Sub zetting()
+    Private Sub Zetting()
         Dim Ra_head, Ra_nut, Ra_plate1, Ra_plate2, no_rings, Ra_ring As Double
         Dim zet_head_plate, zet_nut_plate, zet_plate_plate, zet_head_ring, zet_plate_ring, zet_ring_ring, zet_tot As Double
         Dim length_bolt, E_modulus, oppbout, F_bout, elong_force As Double
@@ -231,20 +261,20 @@ Public Class Form1
         TextBox24.Text = Round(zet_tot / 1000, 3).ToString
     End Sub
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click, NumericUpDown9.ValueChanged, NumericUpDown8.ValueChanged, NumericUpDown14.ValueChanged, NumericUpDown13.ValueChanged, NumericUpDown11.ValueChanged, NumericUpDown10.ValueChanged, TabPage2.Enter
-        zetting()
+        Zetting()
     End Sub
-    Private Sub aanhaalmoment()
-        Dim arm_sleutel, frict_bout, flankdia, dia_head, arm_fric_bout, dia_buiten As Double
+    Private Sub Vastmoment()
+        Dim arm_sleutel, frict_bout, dia_schroefdraad, dia_head, arm_fric_bout, dia_buiten As Double
         Dim F_a, F_f, M_f, spoed, M_netto, M_totaal, F_netto As Double
-        Dim M_WD, beta, phi, rho_acc, MG_aanhaal, MG_los, M_A As Double
+        Dim M_WD, beta, phi, rho_acc, MG_vast, MG_los, M_A As Double
 
-        Double.TryParse(TextBox28.Text, F_a)               'Van F_fric naar F_a(=F_bout)=====voorspankracht
-        arm_sleutel = NumericUpDown15.Value               'arm van de sleutel in [mm]
-        frict_bout = NumericUpDown16.Value                 'frictie factor die op bout werkt
-        F_f = frict_bout * F_a                             'frictiekracht werkend halverwegen uitsteeksel head
+        Double.TryParse(TextBox28.Text, F_a)      'Van F_fric naar F_a(=F_bout)=====voorspankracht
+        arm_sleutel = NumericUpDown15.Value       'arm van de sleutel in [mm]
+        frict_bout = NumericUpDown16.Value        'frictie factor die op bout werkt
+        F_f = frict_bout * F_a                     'frictiekracht werkend halverwegen uitsteeksel head
         Try
             Dim words4() As String = bolttype(ComboBox1.SelectedIndex).Split(";")
-            flankdia = words4(2)
+            dia_schroefdraad = words4(2)
             dia_head = words4(3)
             spoed = words4(4)
             dia_buiten = words4(5)
@@ -252,7 +282,7 @@ Public Class Form1
             'MessageBox.Show(ex.Message & "Line 1290")  ' Show the exception's message.
         End Try
 
-        arm_fric_bout = (dia_head + flankdia) / 4               'arm van frictiekracht op bout
+        arm_fric_bout = (dia_head + dia_schroefdraad) / 4               'arm van frictiekracht op bout
         M_f = F_f * arm_fric_bout           'moment door frictiekracht bout van [kN.mm] naar [Nm]
 
         'evenwicht: spoed*F_a=2*PI*arm_sleutel*F_netto          'M_netto=M_totaal=M_f
@@ -260,16 +290,16 @@ Public Class Form1
         M_netto = F_netto * arm_sleutel                         'van [kN.mm] naar [Nm]
         M_totaal = M_netto + M_f                                'in [Nm]
 
-        'www.werktuig.nl-methode
-        M_WD = frict_bout * F_a * (1.3 / 2) * dia_buiten         'Draagvlakwrijvingsmoment in [Nm]
-        beta = 60 * PI / 180                                               '[deg]
-        phi = Atan(spoed / (PI * flankdia))                      '[deg]
+        'Zie http://www.werktuigbouw.nl/
+        M_WD = frict_bout * F_a * dia_buiten / 2         'Draagvlakwrijvingsmoment in [Nm]
+        beta = 60 * PI / 180                             '[deg]
+        phi = Atan(spoed / (PI * dia_schroefdraad))      '[deg]
         rho_acc = Atan(frict_bout / Cos(beta / 2))
-        MG_aanhaal = F_a * 0.5 * flankdia * Tan(phi + rho_acc)    'draadwrijvingsmoment in [Nm]
-        MG_los = F_a * 0.5 * flankdia * Tan(phi - rho_acc)        'draadwrijvingsmoment bij losdraaien in [Nm]
-        M_A = M_WD + MG_aanhaal                            'totaal aanhaalmoment in [Nm]
+        MG_vast = F_a * 0.5 * dia_schroefdraad * Tan(phi + rho_acc)    'draadwrijvingsmoment in [Nm]
+        MG_los = F_a * 0.5 * dia_schroefdraad * Tan(phi - rho_acc)        'draadwrijvingsmoment bij losdraaien in [Nm]
+        M_A = M_WD + MG_vast                            'totaal vastmoment in [Nm]
 
-        'MessageBox.Show(flankdia, dia_buiten)
+        'MessageBox.Show(dia_schroefdraad, dia_buiten)
         TextBox19.Text = Round(F_a, 2).ToString
         TextBox25.Text = Round(F_f, 2).ToString
         TextBox22.Text = Round(M_f, 2).ToString
@@ -278,12 +308,12 @@ Public Class Form1
         TextBox27.Text = Round(M_totaal, 2).ToString
 
         TextBox31.Text = Round(M_WD, 2).ToString
-        TextBox34.Text = Round(MG_aanhaal, 2).ToString
+        TextBox34.Text = Round(MG_vast, 2).ToString
         TextBox33.Text = Round(MG_los, 2).ToString
         TextBox32.Text = Round(M_A, 4).ToString
     End Sub
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click, NumericUpDown16.ValueChanged, NumericUpDown15.ValueChanged, TabPage3.Enter
-        aanhaalmoment()
+        vastmoment()
     End Sub
     Private Sub Button2_Click(sender As Object, e As EventArgs)
         Dim oWord As Word.Application = Nothing
@@ -454,5 +484,49 @@ Public Class Form1
         oTable.Columns.Item(1).Width = oWord.InchesToPoints(2.4)
         oTable.Columns.Item(2).Width = oWord.InchesToPoints(0.9)
         oTable.Columns.Item(3).Width = oWord.InchesToPoints(0.6)
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click, NumericUpDown20.ValueChanged, ComboBox4.SelectedIndexChanged
+        vastmoment2()
+    End Sub
+    Private Sub Vastmoment2()
+        'Zie http://www.werktuigbouw.nl/
+        Dim area As Double
+        Dim frict_bout, dia_schroefdraad As Double
+        Dim F_a, F_f, spoed As Double
+        Dim M_WD, beta, phi, rho_acc, MG_vast, MG_los, M_A As Double
+
+        frict_bout = NumericUpDown20.Value      'frictie factor die op bout werkt
+        'frictiekracht werkend halverwegen uitsteeksel head
+        Try
+            Dim words4() As String = Lock_nut(ComboBox4.SelectedIndex).Split(";")
+            Double.TryParse(words4(1), dia_schroefdraad)
+            Double.TryParse(words4(2), spoed)
+        Catch ex As Exception
+
+        End Try
+
+        area = PI / 4 * dia_schroefdraad ^ 2    '[mm2] area shaft 
+        F_a = area * 800 * 0.8 * 0.6    '[N] voorspankracht in shaft
+        F_a *= 0.1                      '10% van normale voorspan kracht
+        F_f = frict_bout * F_a
+
+        'www.werktuig.nl-methode
+        M_WD = frict_bout * F_a * dia_schroefdraad / 2   'Draagvlakwrijvingsmoment in [Nm]
+        beta = 60 * PI / 180                                     '[deg]-> [rad]
+        phi = Atan(spoed / (PI * dia_schroefdraad))              '[deg]-> [rad]
+        rho_acc = Atan(frict_bout / Cos(beta / 2))
+        MG_vast = F_a * dia_schroefdraad / 2 * Tan(phi + rho_acc) 'draadwrijvingsmoment vast [Nm]
+        MG_los = F_a * dia_schroefdraad / 2 * Tan(phi - rho_acc)  'draadwrijvingsmoment los [Nm]
+        M_A = M_WD + MG_vast                            'totaal aanhaal moment in [Nm]
+
+        'MessageBox.Show(dia_schroefdraad, dia_buiten)
+        TextBox30.Text = (dia_schroefdraad).ToString("0")   '[mm]
+        TextBox40.Text = area.ToString("0")                 '[mm2]
+        TextBox36.Text = (F_a / 10 ^ 3).ToString("0")       '[kN]
+
+        TextBox38.Text = (M_WD / 10 ^ 3).ToString("0")      '[N.m]
+        TextBox37.Text = (MG_vast / 10 ^ 3).ToString("0")   '[N.m]
+        TextBox29.Text = (M_A / 10 ^ 3).ToString("0")       '[N.m]
     End Sub
 End Class
