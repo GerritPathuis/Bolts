@@ -12,7 +12,7 @@ Imports System.Collections.Generic
 ' ter verificatie van getallen zie: http://www.werktuigbouw.nl/calculators/e3_6a.htm
 Public Class Form1
     Public Shared bolttype() As String =
-     {"Description; Kerndia;  dia_schroefdraad; width head; spoed; buitendiameter",                                      'width head: http://stsindustrial.com/a4-hex-cap-screw-technical-data/
+     {"Description; Kerndia;  dia_thread; width head; spoed; buitendiameter",                                      'width head: http://stsindustrial.com/a4-hex-cap-screw-technical-data/
     "M 6; 4.773	;   5.350	;9.78	;1.00;	6	",
     "M 8; 6.466	;   7.188	;12.73	;1.25;	8	",
     "M 10;8.160	;   9.026	;15.73	;1.50;	10	",
@@ -30,28 +30,27 @@ Public Class Form1
     "M 42;36.479	;39.077	;62.54	;4.50;	42	"}
 
     'SKF book page 1278
-    '"Description; Kerndia;  spoed",
+    '"Description; Kerndia;  spoed; OD",
     Public Shared Lock_nut() As String =
      {
-    "KM19, M95x2;  95; 2",
-    "KM20, M100x2; 100; 2",
-    "KM22, M110x2; 110; 2",
-    "kM24, M120x2; 120; 2",
-    "kM26, M130x2; 130; 2",
-    "kM28, M140x2; 140; 2",
-    "kM30, M150x2; 150; 2",
-    "kM32, M160x3; 160; 3",
-    "kM34, M170x3; 170; 3",
-    "kM36, M180x3; 180; 3",
-    "kM38, M190x3; 190; 3",
-    "kM40, M120x3; 200; 3",
-    "kM42, M210x3; 210; 3",
-    "kM44T, Tr220x4; 220;4",
-    "kM48T, Tr240x4; 240;4",
-    "kM52T, Tr260x4; 260;4",
-    "kM56T, Tr280x4; 280;4",
-    "HM3160,Tr300x4; 300;4",
-    "HM3164,Tr320x5; 320;5"
+    "KM19, M95x2;   95; 2; 125",
+    "KM20, M100x2; 100; 2; 130",
+    "KM22, M110x2; 110; 2; 145",
+    "kM24, M120x2; 120; 2; 155",
+    "kM26, M130x2; 130; 2; 165",
+    "kM28, M140x2; 140; 2; 180",
+    "kM30, M150x2; 150; 2; 195",
+    "kM32, M160x3; 160; 3; 210",
+    "kM34, M170x3; 170; 3; 220",
+    "kM36, M180x3; 180; 3; 230",
+    "kM38, M190x3; 190; 3; 240",
+    "kM40, M120x3; 200; 3; 250",
+    "HM44T, Tr220x4; 220;4;280",
+    "HM48T, Tr240x4; 240;4;300",
+    "HM52T, Tr260x4; 260;4;330",
+    "HM56T, Tr280x4; 280;4;350",
+    "HM3160,Tr300x4; 300;4;380",
+    "HM3164,Tr320x5; 320;5;400"
     }
 
     Public Shared boltgrade() As String =
@@ -136,7 +135,7 @@ Public Class Form1
     End Sub
     Private Sub Aantalbouten()
         Dim motorverm, toerntal, Torque, dia, Fmotor, frictiecoefficient, F_fric, veiligfacmot, aantwaai As Double
-        Dim safetyfact, rekgrens, kerndia, toegsp, dia_schroefdraad, d0 As Double
+        Dim safetyfact, rekgrens, kerndia, toegsp, dia_thread, d0 As Double
         Dim oppbout, Totoppbout, aantbout, F_bout As Double
         motorverm = NumericUpDown1.Value
         toerntal = NumericUpDown2.Value
@@ -155,12 +154,12 @@ Public Class Form1
             rekgrens = words2(2)
             Dim words1() As String = bolttype(ComboBox1.SelectedIndex).Split(";")
             kerndia = words1(1)
-            dia_schroefdraad = words1(2)
+            dia_thread = words1(2)
         Catch ex As Exception
             'MessageBox.Show(ex.Message & "Line 1290")  ' Show the exception's message.
         End Try
 
-        d0 = (kerndia + dia_schroefdraad) / 2
+        d0 = (kerndia + dia_thread) / 2
         safetyfact = NumericUpDown17.Value
         NumericUpDown17.Enabled = False
         toegsp = safetyfact * rekgrens
@@ -264,7 +263,7 @@ Public Class Form1
         Zetting()
     End Sub
     Private Sub Vastmoment()
-        Dim arm_sleutel, frict_bout, dia_schroefdraad, dia_head, arm_fric_bout, dia_buiten As Double
+        Dim arm_sleutel, frict_bout, dia_thread, dia_head, arm_fric_bout, dia_buiten As Double
         Dim F_a, F_f, M_f, spoed, M_netto, M_totaal, F_netto As Double
         Dim M_WD, beta, phi, rho_acc, MG_vast, MG_los, M_A As Double
 
@@ -274,7 +273,7 @@ Public Class Form1
         F_f = frict_bout * F_a                     'frictiekracht werkend halverwegen uitsteeksel head
         Try
             Dim words4() As String = bolttype(ComboBox1.SelectedIndex).Split(";")
-            dia_schroefdraad = words4(2)
+            dia_thread = words4(2)
             dia_head = words4(3)
             spoed = words4(4)
             dia_buiten = words4(5)
@@ -282,7 +281,7 @@ Public Class Form1
             'MessageBox.Show(ex.Message & "Line 1290")  ' Show the exception's message.
         End Try
 
-        arm_fric_bout = (dia_head + dia_schroefdraad) / 4               'arm van frictiekracht op bout
+        arm_fric_bout = (dia_head + dia_thread) / 4               'arm van frictiekracht op bout
         M_f = F_f * arm_fric_bout           'moment door frictiekracht bout van [kN.mm] naar [Nm]
 
         'evenwicht: spoed*F_a=2*PI*arm_sleutel*F_netto          'M_netto=M_totaal=M_f
@@ -293,13 +292,13 @@ Public Class Form1
         'Zie http://www.werktuigbouw.nl/
         M_WD = frict_bout * F_a * dia_buiten / 2         'Draagvlakwrijvingsmoment in [Nm]
         beta = 60 * PI / 180                             '[deg]
-        phi = Atan(spoed / (PI * dia_schroefdraad))      '[deg]
+        phi = Atan(spoed / (PI * dia_thread))      '[deg]
         rho_acc = Atan(frict_bout / Cos(beta / 2))
-        MG_vast = F_a * 0.5 * dia_schroefdraad * Tan(phi + rho_acc)    'draadwrijvingsmoment in [Nm]
-        MG_los = F_a * 0.5 * dia_schroefdraad * Tan(phi - rho_acc)        'draadwrijvingsmoment bij losdraaien in [Nm]
+        MG_vast = F_a * 0.5 * dia_thread * Tan(phi + rho_acc)    'draadwrijvingsmoment in [Nm]
+        MG_los = F_a * 0.5 * dia_thread * Tan(phi - rho_acc)        'draadwrijvingsmoment bij losdraaien in [Nm]
         M_A = M_WD + MG_vast                            'totaal vastmoment in [Nm]
 
-        'MessageBox.Show(dia_schroefdraad, dia_buiten)
+        'MessageBox.Show(dia_thread, dia_buiten)
         TextBox19.Text = Round(F_a, 2).ToString
         TextBox25.Text = Round(F_f, 2).ToString
         TextBox22.Text = Round(M_f, 2).ToString
@@ -313,7 +312,7 @@ Public Class Form1
         TextBox32.Text = Round(M_A, 4).ToString
     End Sub
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click, NumericUpDown16.ValueChanged, NumericUpDown15.ValueChanged, TabPage3.Enter
-        vastmoment()
+        Vastmoment()
     End Sub
     Private Sub Button2_Click(sender As Object, e As EventArgs)
         Dim oWord As Word.Application = Nothing
@@ -487,41 +486,42 @@ Public Class Form1
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click, NumericUpDown20.ValueChanged, ComboBox4.SelectedIndexChanged
-        vastmoment2()
+        Vastmoment2()
     End Sub
     Private Sub Vastmoment2()
         'Zie http://www.werktuigbouw.nl/
         Dim area As Double
-        Dim frict_bout, dia_schroefdraad As Double
-        Dim F_a, F_f, spoed As Double
+        Dim frict_bout, dia_thread As Double
+        Dim F_a, F_f, spoed, lock_od As Double
         Dim M_WD, beta, phi, rho_acc, MG_vast, MG_los, M_A As Double
 
         frict_bout = NumericUpDown20.Value      'frictie factor die op bout werkt
         'frictiekracht werkend halverwegen uitsteeksel head
         Try
             Dim words4() As String = Lock_nut(ComboBox4.SelectedIndex).Split(";")
-            Double.TryParse(words4(1), dia_schroefdraad)
+            Double.TryParse(words4(1), dia_thread)
             Double.TryParse(words4(2), spoed)
+            Double.TryParse(words4(3), lock_od)
         Catch ex As Exception
 
         End Try
 
-        area = PI / 4 * dia_schroefdraad ^ 2    '[mm2] area shaft 
+        area = PI / 4 * dia_thread ^ 2    '[mm2] area shaft 
         F_a = area * 800 * 0.8 * 0.6    '[N] voorspankracht in shaft
         F_a *= 0.1                      '10% van normale voorspan kracht
         F_f = frict_bout * F_a
 
-        'www.werktuig.nl-methode
-        M_WD = frict_bout * F_a * dia_schroefdraad / 2   'Draagvlakwrijvingsmoment in [Nm]
-        beta = 60 * PI / 180                                     '[deg]-> [rad]
-        phi = Atan(spoed / (PI * dia_schroefdraad))              '[deg]-> [rad]
+        'Machine onderdelen pag 84, 24e druk
+        M_WD = frict_bout * F_a * (dia_thread + lock_od) / 4    'Draagvlakwrijvingsmoment in [Nm]
+        beta = 60 * PI / 180                                    'tophoek draad in [radians]
+        phi = Atan(spoed / (PI * dia_thread))                   'hellingshoek door spoed
         rho_acc = Atan(frict_bout / Cos(beta / 2))
-        MG_vast = F_a * dia_schroefdraad / 2 * Tan(phi + rho_acc) 'draadwrijvingsmoment vast [Nm]
-        MG_los = F_a * dia_schroefdraad / 2 * Tan(phi - rho_acc)  'draadwrijvingsmoment los [Nm]
+        MG_vast = F_a * (dia_thread / 2) * Tan(phi + rho_acc)   'draadwrijvingsmoment vast [Nm]
+        MG_los = F_a * (dia_thread / 2) * Tan(phi - rho_acc)    'draadwrijvingsmoment los [Nm]
         M_A = M_WD + MG_vast                            'totaal aanhaal moment in [Nm]
 
-        'MessageBox.Show(dia_schroefdraad, dia_buiten)
-        TextBox30.Text = (dia_schroefdraad).ToString("0")   '[mm]
+        'MessageBox.Show(dia_thread, dia_buiten)
+        TextBox30.Text = (dia_thread).ToString("0")   '[mm]
         TextBox40.Text = area.ToString("0")                 '[mm2]
         TextBox36.Text = (F_a / 10 ^ 3).ToString("0")       '[kN]
 
