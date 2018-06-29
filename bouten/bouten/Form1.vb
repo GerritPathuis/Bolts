@@ -94,7 +94,7 @@ Public Class Form1
         ComboBox1.Items.Clear()
         '-------Fill combobox4,  selection------------------
         For hh = 0 To (UBound(bolttype))                'Fill combobox 1 with bolt data
-            words = bolttype(hh).Split(";")
+            words = bolttype(hh).Split(CType(";", Char()))
             ComboBox1.Items.Add(Trim(words(0)))
         Next hh
         ComboBox1.SelectedIndex = 2
@@ -106,7 +106,7 @@ Public Class Form1
         ComboBox4.Items.Clear()
         '-------Fill combobox4,  selection------------------
         For hh = 0 To Lock_nut.Length - 1            'Fill combobox 
-            words = Lock_nut(hh).Split(";")
+            words = Lock_nut(hh).Split(CType(";", Char()))
             ComboBox4.Items.Add(Trim(words(0)))
         Next hh
         ComboBox4.SelectedIndex = 1
@@ -117,7 +117,7 @@ Public Class Form1
         ComboBox2.Items.Clear()
         '-------Fill combobox4,  selection------------------
         For hh = 0 To (UBound(geinstaantbout))                'Fill combobox 1 with bolt data
-            words = geinstaantbout(hh).Split(";")
+            words = geinstaantbout(hh).Split(CType(";", Char()))
             ComboBox2.Items.Add(Trim(words(0)))
         Next hh
         ComboBox2.SelectedIndex = 2
@@ -128,7 +128,7 @@ Public Class Form1
         ComboBox3.Items.Clear()
         '-------Fill combobox4,  selection------------------
         For hh = 0 To (UBound(boltgrade))                'Fill combobox 1 with bolt data
-            words = boltgrade(hh).Split(";")
+            words = boltgrade(hh).Split(CType(";", Char()))
             ComboBox3.Items.Add(Trim(words(0)))
         Next hh
         ComboBox3.SelectedIndex = 1
@@ -150,11 +150,11 @@ Public Class Form1
         F_fric = Fmotor / frictiecoefficient      'in [kN] 
 
         Try
-            Dim words2() As String = boltgrade(ComboBox3.SelectedIndex).Split(";")
-            rekgrens = words2(2)
-            Dim words1() As String = bolttype(ComboBox1.SelectedIndex).Split(";")
-            kerndia = words1(1)
-            dia_thread = words1(2)
+            Dim words2() As String = boltgrade(ComboBox3.SelectedIndex).Split(CType(";", Char()))
+            rekgrens = CDbl(words2(2))
+            Dim words1() As String = bolttype(ComboBox1.SelectedIndex).Split(CType(";", Char()))
+            kerndia = CDbl(words1(1))
+            dia_thread = CDbl(words1(2))
         Catch ex As Exception
             'MessageBox.Show(ex.Message & "Line 1290")  ' Show the exception's message.
         End Try
@@ -190,7 +190,7 @@ Public Class Form1
         Dim qq, sigma02 As Double
 
         If (ComboBox1.SelectedIndex > -1) Then      'Prevent exceptions
-            Dim words() As String = bolttype(ComboBox1.SelectedIndex).Split(";")
+            Dim words() As String = bolttype(ComboBox1.SelectedIndex).Split(CType(";", Char()))
 
             '--------------- select the strength @ temperature
             qq = NumericUpDown4.Value
@@ -199,13 +199,13 @@ Public Class Form1
                 Case (qq > 0 AndAlso qq < 100)
                     Double.TryParse(words(2), sigma02)     'Sigma 0.2 [N/mm]
                 Case (qq >= 100 AndAlso qq < 200)
-                    Double.TryParse(Math.Round(0.85 * words(2)), sigma02)    'Sigma 0.2 [N/mm]
+                    Double.TryParse(CType(Math.Round(0.85 * CDbl(words(2))), String), sigma02)    'Sigma 0.2 [N/mm]
                 Case (qq >= 200 AndAlso qq < 300)
-                    Double.TryParse(Math.Round(0.8 * words(2)), sigma02)    'Sigma 0.2 [N/mm]
+                    Double.TryParse(CType(Round(0.8 * CDbl(words(2))), String), sigma02)    'Sigma 0.2 [N/mm]
                 Case (qq >= 300 AndAlso qq < 400)
-                    Double.TryParse(Math.Round(0.75 * words(2)), sigma02)    'Sigma 0.2 [N/mm]
+                    Double.TryParse(CType(Round(0.75 * CDbl(words(2))), String), sigma02)    'Sigma 0.2 [N/mm]
                 Case (qq >= 400)
-                    Double.TryParse(Math.Round(0.7 * words(2)), sigma02)    'Sigma 0.2 [N/mm]
+                    Double.TryParse(CType(Round(0.7 * CDbl(words(2))), String), sigma02)    'Sigma 0.2 [N/mm]
             End Select
             TextBox6.Text = sigma02.ToString
 
@@ -270,15 +270,14 @@ Public Class Form1
         Double.TryParse(TextBox28.Text, F_a)      'Van F_fric naar F_a(=F_bout)=====voorspankracht
         arm_sleutel = NumericUpDown15.Value       'arm van de sleutel in [mm]
         frict_bout = NumericUpDown16.Value        'frictie factor die op bout werkt
-        F_f = frict_bout * F_a                     'frictiekracht werkend halverwegen uitsteeksel head
+        F_f = frict_bout * F_a                    'frictiekracht werkend halverwegen uitsteeksel head
         Try
-            Dim words4() As String = bolttype(ComboBox1.SelectedIndex).Split(";")
-            dia_thread = words4(2)
-            dia_head = words4(3)
-            spoed = words4(4)
-            dia_buiten = words4(5)
+            Dim words4() As String = bolttype(ComboBox1.SelectedIndex).Split(CType(";", Char()))
+            dia_thread = CDbl(words4(2))
+            dia_head = CDbl(words4(3))
+            spoed = CDbl(words4(4))
+            dia_buiten = CDbl(words4(5))
         Catch ex As Exception
-            'MessageBox.Show(ex.Message & "Line 1290")  ' Show the exception's message.
         End Try
 
         arm_fric_bout = (dia_head + dia_thread) / 4               'arm van frictiekracht op bout
@@ -290,13 +289,13 @@ Public Class Form1
         M_totaal = M_netto + M_f                                'in [Nm]
 
         'Zie http://www.werktuigbouw.nl/
-        M_WD = frict_bout * F_a * dia_buiten / 2         'Draagvlakwrijvingsmoment in [Nm]
-        beta = 60 * PI / 180                             '[deg]
-        phi = Atan(spoed / (PI * dia_thread))      '[deg]
+        M_WD = frict_bout * F_a * dia_buiten / 2        'Draagvlakwrijvingsmoment in [Nm]
+        beta = 60 * PI / 180                            'tophoek draad [rad]
+        phi = Atan(spoed / (PI * dia_thread))           'Spoed [rad]
         rho_acc = Atan(frict_bout / Cos(beta / 2))
-        MG_vast = F_a * 0.5 * dia_thread * Tan(phi + rho_acc)    'draadwrijvingsmoment in [Nm]
-        MG_los = F_a * 0.5 * dia_thread * Tan(phi - rho_acc)        'draadwrijvingsmoment bij losdraaien in [Nm]
-        M_A = M_WD + MG_vast                            'totaal vastmoment in [Nm]
+        MG_vast = F_a * 0.5 * dia_thread * Tan(phi + rho_acc) 'draadwrijvingsmoment in [Nm]
+        MG_los = F_a * 0.5 * dia_thread * Tan(phi - rho_acc)   'draadwrijvingsmoment bij losdraaien in [Nm]
+        M_A = M_WD + MG_vast           'totaal vastmoment in [Nm]
 
         'MessageBox.Show(dia_thread, dia_buiten)
         TextBox19.Text = Round(F_a, 2).ToString
@@ -324,7 +323,7 @@ Public Class Form1
 
         'Start Word and open the document template. 
         font_sizze = 9
-        oWord = CreateObject("Word.Application")
+        oWord = CType(CreateObject("Word.Application"), Word.Application)
         oWord.Visible = True
         oDoc = oWord.Documents.Add
 
@@ -333,14 +332,14 @@ Public Class Form1
         oPara1.Range.Text = "VTK Engineering"
         oPara1.Range.Font.Name = "Arial"
         oPara1.Range.Font.Size = font_sizze + 3
-        oPara1.Range.Font.Bold = True
+        oPara1.Range.Font.Bold = CInt(True)
         oPara1.Format.SpaceAfter = 1                '24 pt spacing after paragraph. 
         oPara1.Range.InsertParagraphAfter()
 
         oPara2 = oDoc.Content.Paragraphs.Add(oDoc.Bookmarks.Item("\endofdoc").Range)
         oPara2.Range.Font.Size = font_sizze + 1
         oPara2.Format.SpaceAfter = 1
-        oPara2.Range.Font.Bold = False
+        oPara2.Range.Font.Bold = CInt(False)
         oPara2.Range.Text = "Determination number of bolts" & vbCrLf
         oPara2.Range.InsertParagraphAfter()
 
@@ -349,8 +348,8 @@ Public Class Form1
         oTable = oDoc.Tables.Add(oDoc.Bookmarks.Item("\endofdoc").Range, 5, 2)
         oTable.Range.ParagraphFormat.SpaceAfter = 1
         oTable.Range.Font.Size = font_sizze
-        oTable.Range.Font.Bold = False
-        oTable.Rows.Item(1).Range.Font.Bold = True
+        oTable.Range.Font.Bold = CInt(False)
+        oTable.Rows.Item(1).Range.Font.Bold = CInt(True)
 
         row = 1
         oTable.Cell(row, 1).Range.Text = "Project Name"
@@ -370,7 +369,7 @@ Public Class Form1
 
         oTable.Columns.Item(1).Width = oWord.InchesToPoints(2.5)   'Change width of columns 1 & 2.
         oTable.Columns.Item(2).Width = oWord.InchesToPoints(2)
-        oTable.Rows.Item(1).Range.Font.Bold = True
+        oTable.Rows.Item(1).Range.Font.Bold = CInt(True)
         oDoc.Bookmarks.Item("\endofdoc").Range.InsertParagraphAfter()
 
         '----------------------------------------------
@@ -378,42 +377,42 @@ Public Class Form1
         oTable = oDoc.Tables.Add(oDoc.Bookmarks.Item("\endofdoc").Range, 9, 3)
         oTable.Range.ParagraphFormat.SpaceAfter = 1
         oTable.Range.Font.Size = font_sizze
-        oTable.Range.Font.Bold = False
-        oTable.Rows.Item(1).Range.Font.Bold = True
+        oTable.Range.Font.Bold = CInt(False)
+        oTable.Rows.Item(1).Range.Font.Bold = CInt(True)
         oTable.Rows.Item(1).Range.Font.Size = font_sizze + 2
         row = 1
         oTable.Cell(row, 1).Range.Text = "Input Data"
         row += 1
         oTable.Cell(row, 1).Range.Text = "Installed motorvermogen"
-        oTable.Cell(row, 2).Range.Text = NumericUpDown1.Value
+        oTable.Cell(row, 2).Range.Text = CType(NumericUpDown1.Value, String)
         oTable.Cell(row, 3).Range.Text = "[kW]"
         row += 1
         oTable.Cell(row, 1).Range.Text = "Veiligheidsfactor motor"
-        oTable.Cell(row, 2).Range.Text = NumericUpDown6.Value
+        oTable.Cell(row, 2).Range.Text = CType(NumericUpDown6.Value, String)
         oTable.Cell(row, 3).Range.Text = "[-]"
         row += 1
         oTable.Cell(row, 1).Range.Text = "Aantal waaiers"
-        oTable.Cell(row, 2).Range.Text = NumericUpDown7.Value
+        oTable.Cell(row, 2).Range.Text = CType(NumericUpDown7.Value, String)
         oTable.Cell(row, 3).Range.Text = "[-]"
         row += 1
         oTable.Cell(row, 1).Range.Text = "Toerental"
-        oTable.Cell(row, 2).Range.Text = NumericUpDown2.Value
+        oTable.Cell(row, 2).Range.Text = CType(NumericUpDown2.Value, String)
         oTable.Cell(row, 3).Range.Text = "[rpm]"
         row += 1
         oTable.Cell(row, 1).Range.Text = "Diameter naaf, bout"
-        oTable.Cell(row, 2).Range.Text = NumericUpDown3.Value
+        oTable.Cell(row, 2).Range.Text = CType(NumericUpDown3.Value, String)
         oTable.Cell(row, 3).Range.Text = "[mm]"
         row += 1
         oTable.Cell(row, 1).Range.Text = "Friction coefficient"
-        oTable.Cell(row, 2).Range.Text = NumericUpDown5.Value
+        oTable.Cell(row, 2).Range.Text = CType(NumericUpDown5.Value, String)
         oTable.Cell(row, 3).Range.Text = "[-]"
         row += 1
         oTable.Cell(row, 1).Range.Text = "Ontwerptemperatuur"
-        oTable.Cell(row, 2).Range.Text = NumericUpDown4.Value
+        oTable.Cell(row, 2).Range.Text = CType(NumericUpDown4.Value, String)
         oTable.Cell(row, 3).Range.Text = "[C]"
         row += 1
         oTable.Cell(row, 1).Range.Text = "Type bout"
-        oTable.Cell(row, 2).Range.Text = ComboBox1.SelectedItem
+        oTable.Cell(row, 2).Range.Text = CType(ComboBox1.SelectedItem, String)
 
 
         oTable.Columns.Item(1).Width = oWord.InchesToPoints(2.4)   'Change width of columns 1 & 2.
@@ -427,8 +426,8 @@ Public Class Form1
         oTable = oDoc.Tables.Add(oDoc.Bookmarks.Item("\endofdoc").Range, 11, 3)
         oTable.Range.ParagraphFormat.SpaceAfter = 1
         oTable.Range.Font.Size = font_sizze
-        oTable.Range.Font.Bold = False
-        oTable.Rows.Item(1).Range.Font.Bold = True
+        oTable.Range.Font.Bold = CInt(False)
+        oTable.Rows.Item(1).Range.Font.Bold = vbTrue
         oTable.Rows.Item(1).Range.Font.Size = font_sizze + 2
         row = 1
         oTable.Cell(row, 1).Range.Text = "Output"
@@ -478,7 +477,7 @@ Public Class Form1
         oTable.Cell(row, 2).Range.Text = TextBox12.Text
         row += 1
         oTable.Cell(row, 1).Range.Text = "Geinstalleerd aantal bouten"
-        oTable.Cell(row, 2).Range.Text = ComboBox2.SelectedItem
+        oTable.Cell(row, 2).Range.Text = CType(ComboBox2.SelectedItem, String)
 
         oTable.Columns.Item(1).Width = oWord.InchesToPoints(2.4)
         oTable.Columns.Item(2).Width = oWord.InchesToPoints(0.9)
@@ -498,7 +497,7 @@ Public Class Form1
         frict_bout = NumericUpDown20.Value      'frictie factor die op bout werkt
         'frictiekracht werkend halverwegen uitsteeksel head
         Try
-            Dim words4() As String = Lock_nut(ComboBox4.SelectedIndex).Split(";")
+            Dim words4() As String = Lock_nut(ComboBox4.SelectedIndex).Split(CType(";", Char()))
             Double.TryParse(words4(1), dia_thread)
             Double.TryParse(words4(2), spoed)
             Double.TryParse(words4(3), lock_od)
